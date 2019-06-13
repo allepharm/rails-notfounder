@@ -1,0 +1,8 @@
+.bundle/
+log/*.log
+pkg/
+spec/rails_not_founder_dummy/log/*.log
+spec/rails_not_founder_dummy/node_modules/
+spec/rails_not_founder_dummy/yarn-error.log
+spec/rails_not_founder_dummy/storage/
+spec/rails_not_founder_dummy/tmp/
