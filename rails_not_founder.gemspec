@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.2.3"
 
   s.add_development_dependency "pg"
+  s.add_development_dependency "rspec-rails"
   s.add_development_dependency "rubocop"
   s.add_development_dependency "rubocop-rspec"
 end
