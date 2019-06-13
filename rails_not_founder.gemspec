@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/allepharm/rails-notfounder"
   s.summary     = "Aggregate 404s in a separate model and email weekly reports"\
                   " with 404s per domain request"
-  s.description = "TODO: Description of RailsNotFounder."
   s.license     = "MIT"
 
   s.files = Dir[
@@ -23,4 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.2.3"
 
   s.add_development_dependency "pg"
+  s.add_development_dependency "rubocop"
+  s.add_development_dependency "rubocop-rspec"
 end
