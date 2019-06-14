@@ -4,6 +4,8 @@ require File.expand_path("../rails_not_founder_dummy/config/environment", __FILE
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "rspec/rails"
 
+Dir[Rails.root.join("..", "support", "**", "*.rb")].each { |f| require f }
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
