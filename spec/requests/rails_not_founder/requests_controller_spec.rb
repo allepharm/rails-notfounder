@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe RailsNotFounder::MissingController, type: :request do
+RSpec.describe RailsNotFounder::RequestsController, type: :request do
   describe "ANY (method) :create" do
     it "handles GET request" do
       get "/unmatched"

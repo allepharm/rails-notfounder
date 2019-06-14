@@ -1,4 +1,4 @@
-class RailsNotFounder::MissingController < ApplicationController
+class RailsNotFounder::RequestsController < ApplicationController
   def create
     raise_not_found
   end
