@@ -1,5 +1,6 @@
 class RailsNotFounder::RequestsController < ApplicationController
   def create
+    RailsNotFounder::RequestLogger.call(params, request)
     raise_not_found
   end
 
