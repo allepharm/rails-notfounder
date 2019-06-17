@@ -7,6 +7,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-rspec"
+  gem "timecop"
 end
 
 group :test do
