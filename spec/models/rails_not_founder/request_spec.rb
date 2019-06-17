@@ -1,6 +1,12 @@
 require "rails_helper"
 
 RSpec.describe RailsNotFounder::Request, type: :model do
+  describe "scopes" do
+    subject { described_class }
+
+    it { should forward_to_scope(:for_request_log) }
+  end
+
   describe "database columns" do
     let(:model) { described_class.new }
 
