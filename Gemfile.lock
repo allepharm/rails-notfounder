@@ -79,6 +79,7 @@ GEM
     parser (2.6.3.0)
       ast (~> 2.4.0)
     pg (1.1.4)
+    powerpack (0.1.2)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -158,6 +159,7 @@ PLATFORMS
 
 DEPENDENCIES
   pg
+  powerpack
   rails_not_founder!
   rspec-rails
   rubocop
