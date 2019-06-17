@@ -4,6 +4,9 @@ gemspec
 
 group :development, :test do
   gem "powerpack", require: "powerpack/string/format"
+  gem "rspec-rails"
+  gem "rubocop"
+  gem "rubocop-rspec"
 end
 
 group :test do
