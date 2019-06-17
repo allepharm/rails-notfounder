@@ -1,6 +1,12 @@
 require "rails_helper"
 
 RSpec.describe RailsNotFounder::RequestLogger do
+  describe ".call" do
+    subject { described_class }
+
+    it { should forward_to_instance(:call).with_2_args }
+  end
+
   describe "#call" do
     let(:service) { described_class.new(params, request) }
 
