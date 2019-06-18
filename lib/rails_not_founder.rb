@@ -3,14 +3,13 @@ require "rails_not_founder/configuration"
 
 module RailsNotFounder
   class << self
-    attr_writer :configuration
-  end
+    def configure
+      yield configuration
+    end
 
-  def self.configuration
-    @configuration ||= Configuration.new
-  end
-
-  def self.configure
-    yield(configuration)
+    def configuration
+      @configuration ||= Configuration.new
+    end
+    alias config configuration
   end
 end
