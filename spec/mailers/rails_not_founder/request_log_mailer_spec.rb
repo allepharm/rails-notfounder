@@ -19,11 +19,11 @@ RSpec.describe RailsNotFounder::RequestLogMailer, type: :mailer do
     end
 
     it "renders the 'from email'" do
-      expect(mail.from).to eq %w[404s_log@example.com]
+      expect(mail.from).to eq %w[404_report@example.com]
     end
 
     it "renders the 'to email'" do
-      expect(mail.to).to eq %w[404s_log@example.com]
+      expect(mail.to).to eq %w[admin@example.com]
     end
 
     it "renders a url and a number of occurrences of the most popular 404" do

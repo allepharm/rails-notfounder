@@ -1,7 +1,7 @@
 class RailsNotFounder::RequestLogMailer < ApplicationMailer
   layout false
-  default from: "404s Log <404s_log@example.com>",
-          to: "404s Log <404s_log@example.com>"
+  default from: RailsNotFounder.configuration.sender_email,
+          to: RailsNotFounder.configuration.receiver_email
 
   def notify(log, subject)
     @log = log
