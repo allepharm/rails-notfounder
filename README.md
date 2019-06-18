@@ -19,5 +19,18 @@ Or install it yourself as:
 $ gem install rails_not_founder
 ```
 
+## Configuration
+
+Run the generator `rails g rails_not_founder` to create a gem initializer:
+
+```ruby
+RailsNotFounder.configure do |config|
+  config.sender_email = "404_report@example.com"
+  config.receiver_email = "admin@example.com"
+end
+```
+
+And adjust the emails used for sending and receiving a weekly 404 report.
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
