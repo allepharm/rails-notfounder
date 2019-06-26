@@ -1,0 +1,5 @@
+<%= @subject %>
+
+<% @log.each do |unmatched_route| %>
+  <%= unmatched_route.count %> - <%= unmatched_route.url %>
+<% end %>
