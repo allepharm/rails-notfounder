@@ -1,0 +1,44 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3-node-browsers
+        environment:
+          PG_USERNAME: "rails_not_founder_dummy"
+          RAILS_ENV: test
+      - image: circleci/postgres:10.4
+        environment:
+          POSTGRES_USER: "rails_not_founder_dummy"
+    environment:
+      - TZ: "/usr/share/zoneinfo/Europe/Warsaw"
+    parallelism: 1
+    steps:
+      - checkout
+      - run: gem install bundler:2.0.1
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "Gemfile.lock" }}
+      - run: bundle install --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: dependencies-{{ checksum "Gemfile.lock" }}
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y postgresql-client libsodium-dev
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+      - run:
+          name: run tests
+          command: |
+            mkdir ~/rspec
+            mkdir -p tmp/cache
+            bundle exec rspec -r rspec_junit_formatter \
+              --format progress \
+              --format RspecJunitFormatter \
+              -o ~/rspec/rspec.xml \
+              $(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)
+      - store_test_results:
+          path: ~/rspec
+      - store_artifacts:
+          path: ~/rspec
