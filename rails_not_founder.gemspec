@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency "pg"
-  s.add_dependency "rails", "~> 5.2.3"
+  s.add_dependency "rails", "~> 6"
   s.add_dependency "whenever"
 end
