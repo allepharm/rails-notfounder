@@ -1,5 +1,7 @@
 module RailsNotFounder
   class RequestsController < ApplicationController
+    skip_forgery_protection raise: false
+
     def create
       RailsNotFounder::RequestLogger.call(params, request)
       raise_not_found
